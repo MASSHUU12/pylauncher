@@ -118,11 +118,11 @@ Windows .bat file:
 
 ```bat
 @REM It will run in a new window, so you can see all the program logs
-cd "D:\gitHub\program-launcher\pylauncher"
+cd "D:\pylauncher\pylauncher"
 start "" cmd.exe /k "pylauncher.py list_name"
 
 @REM Runs without a window
-cd "D:\gitHub\program-launcher\pylauncher"
+cd "D:\pylauncher\pylauncher"
 start "" pylauncher.py list_name
 
 @REM Also runs without a window
@@ -134,7 +134,7 @@ Windows .ps1 file:
 
 ```ps1
 # Runs without a window
-Set-Location -Path "D:\gitHub\program-launcher\pylauncher"
+Set-Location -Path "D:\pylauncher\pylauncher"
 python pylauncher.py list_name
 
 # Makes the window not disappear, so you can see the logs
