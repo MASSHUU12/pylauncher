@@ -1,6 +1,6 @@
 # PyLauncher
 
-Program to run a predefined list of programs.
+A program used to automate the startup of a series of programs. I run the same programs every day, and I don't want them to slow down the system startup by automatically running, so I created this program to streamline and speed up the constant clicking of the same icons.
 
 The program is free of any dependencies, you just need to have Python.
 
