@@ -114,7 +114,7 @@ pylauncher list_name
 This method involves creating a new file on the desktop (or wherever else you want to run the program from), which will call a program that will run a specific list.
 This is the best option because once everything is done, you will be able to run a series of programs with one or two clicks.
 
-Window .bat file:
+Windows .bat file:
 
 ```bat
 @REM It will run in a new window, so you can see all the program logs
