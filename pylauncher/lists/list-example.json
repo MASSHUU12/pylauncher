@@ -1,0 +1,11 @@
+{
+  "main": {
+    "LibreWolf": {
+      "path": "C:\\Program Files\\LibreWolf\\librewolf.exe",
+      "options": ["-new-tab"]
+    },
+    "Brave": {
+      "path": "C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe"
+    }
+  }
+}
