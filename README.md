@@ -20,6 +20,8 @@ In the same folder is the file `list-example.json`, which contains the basic sam
 
 To create a list, you first need to name it somehow, e.g. `main`. With this name you will later call a specific list to run.
 
+Open `list.json` file and write something like this:
+
 ```json
 {
   "main": {}
@@ -147,6 +149,23 @@ Linux/Unix .sh file (I have not checked if it works):
 cd your/directory
 python pylauncher.py list_name
 ```
+
+## Config
+
+Configuration of the program is completely optional, the configuration file can be found in `pylauncher/config/config.json`.
+
+### Available configuration options
+
+#### logLevel
+
+Allows you to customize what logs will be returned by the program.
+
+Options available:
+
+- all
+- warning_error
+- error
+- off
 
 ### License
 
