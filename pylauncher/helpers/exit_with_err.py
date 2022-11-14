@@ -1,4 +1,5 @@
 import sys
+from helpers.log import log
 
 
 def exit_with_err(message: str) -> None:
@@ -7,5 +8,5 @@ def exit_with_err(message: str) -> None:
     Displays the reason for program termination
     '''
 
-    print(message)
+    log(message, "error")
     sys.exit()

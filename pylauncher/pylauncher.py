@@ -4,6 +4,7 @@ from helpers.get_programs_list import get_programs_list
 from helpers.exit_with_err import exit_with_err as close
 from helpers.validate_list import validate_list
 from helpers.run import run
+from helpers.settings_loader import settings_loader
 
 from constants.messages import NO_LIST
 from constants.info import info
@@ -15,6 +16,9 @@ def main(argv: list[str]) -> None:
     '''
 
     info()
+
+    # Load settings
+    settings_loader()
 
     if len(argv) <= 0:
         close(NO_LIST)

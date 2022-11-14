@@ -1,0 +1,8 @@
+{
+  "config": {
+    "logLevel": "off"
+  },
+  "allSettings": {
+    "logLevel": "all | warning_error | error | off"
+  }
+}

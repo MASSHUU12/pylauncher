@@ -1,2 +1,2 @@
-VERSION = "v1.0.1-beta"
+VERSION = "v1.1.0-beta"
 REPO_LINK = "https://github.com/MASSHUU12/pylauncher"
