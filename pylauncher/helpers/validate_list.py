@@ -58,10 +58,10 @@ def validate_list(list: dict[str, dict[str, dict[str, str | list[str]]]]) -> lis
         # If no item has passed validation terminate the program
         close(NO_PASSED_VALIDATION)
     elif len(validated) == len(list):
-        print(ALL_PASSED)
+        print(ALL_PASSED + "\n")
     else:
         print(SOME_NOT_PASS)
         print(f"{Colors.FG.GREEN}Passed:{Colors.RESET} {len(validated)}")
-        print(f"{Colors.FG.RED}Skipped:{Colors.RESET} {len(list) - len(validated)}")
+        print(f"{Colors.FG.RED}Skipped:{Colors.RESET} {len(list) - len(validated)}\n")
 
     return validated

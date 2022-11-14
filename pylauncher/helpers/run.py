@@ -10,7 +10,8 @@ def run(list: list[dict[str, dict[str, dict[str, str | list[str]]]]]) -> None:
     '''
 
     for program in list:
-        print(f"Launching {Colors.BOLD}{program['program']}{Colors.RESET}")
+        print(
+            f"Launching {Colors.BOLD}{program['program']}{Colors.RESET}", end="")
 
         try:
             subprocess.Popen(
@@ -24,7 +25,7 @@ def run(list: list[dict[str, dict[str, dict[str, str | list[str]]]]]) -> None:
 def launch_success(program) -> None:
     print(f"{Colors.FG.GREEN}{Colors.BOLD}")
     print(
-        f"{program['program']}{Colors.RESET} {Colors.FG.GREEN}should now be running.")
+        f"{program['program']}{Colors.RESET} {Colors.FG.GREEN}should now be running.{Colors.RESET}")
     print(f"{Colors.RESET}")
 
 
