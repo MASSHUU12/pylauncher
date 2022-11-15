@@ -4,6 +4,7 @@ from constants.colors import Colors
 ALL_PASSED = f"{Colors.FG.GREEN}All elements have passed validation.{Colors.RESET}"
 CLOSING = f"Closing the program...{Colors.RESET}"
 CONFIG_LOADING = "Preparing to load config."
+PREPARING_FOR_CLOSING = "Preparing to close programs."
 
 # Warning
 SOME_NOT_PASS = f"{Colors.FG.YELLOW}Some elements did not pass validation.{Colors.RESET}"

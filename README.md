@@ -6,20 +6,20 @@ I run the same programs every day, and I don't want them to slow down the system
 
 This source code is available to everyone under the standard [MIT](https://github.com/MASSHUU12/pylauncher/blob/master/LICENSE) license.
 
-## Program configuration
-
-### Prerequisites
+# Prerequisites
 
 - Python 3.4^
 - Python library: psutil (Used to shut down programs)
 
-### Library installation
+## Library installation
 
 ```sh
 pip install psutil
 ```
 
-### Defining lists of programs to run
+# Program configuration
+
+## Defining lists of programs to run
 
 In the `pylauncher/lists` folder, create a `list.json` file.
 
@@ -77,9 +77,9 @@ The way to add programs is as follows:
 }
 ```
 
-### Launching the program
+## Launching the program
 
-#### Method one (not recommended)
+### Method one (not recommended)
 
 The simplest method, but inconvenient.
 Assuming you are in the root directory of the project, you can run it using the console:
@@ -94,7 +94,7 @@ or
 .\pylauncher\pylauncher open list_name
 ```
 
-#### Method two (better, but still not recommended) | Windows Only
+### Method two (better, but still not recommended) | Windows Only
 
 This method will only work on Windows systems, however, all steps have their counterparts on other systems.
 
@@ -118,7 +118,7 @@ Now turn on the console and run the program, if everything went well, the progra
 pylauncher open list_name
 ```
 
-#### Method three (recommended)
+### Method three (recommended)
 
 This method involves creating a new file on the desktop (or wherever else you want to run the program from), which will call a program that will run a specific list.
 This is the best option because once everything is done, you will be able to run a series of programs with one or two clicks.
@@ -155,6 +155,30 @@ Linux/Unix .sh file (I have not checked if it works):
 ```sh
 cd your/directory
 python pylauncher.py open list_name
+```
+
+## Closing programs from the list
+
+In addition to opening programs, closing them is also supported. You don't have to change anything in list.json, but in addition to the path, the name of the program is also supported (the program is case-sensitive, if the program doesn't close, try changing the case of the first letter).
+
+```sh
+pylauncher close list_name
+```
+
+```json
+{
+  "main": {
+    "LibreWolf": {
+      "path": "C:\\Program Files\\LibreWolf\\librewolf.exe",
+    },
+    "Brave": {
+      "path": "brave.exe"
+    },
+    "Discord": {
+      "path": "Discord"
+    }
+  }
+}
 ```
 
 ## Config

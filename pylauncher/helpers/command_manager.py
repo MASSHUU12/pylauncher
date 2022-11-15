@@ -14,14 +14,14 @@ def command_manager(command: str, selectedList: str) -> None:
     # List of programs
     list = get_programs_list(selectedList)
 
-    # Validated list of programs
-    validated = validate_list(list)
-
     low = command.lower()
     if low in COMMAND_OPEN:
+        # Validated list of programs
+        validated = validate_list(list)
+
         # Run validated programs
         run(validated)
 
     if low in COMMAND_CLOSE:
         # Close validated programs
-        close(validated)
+        close(list)
