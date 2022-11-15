@@ -1,19 +1,35 @@
 from helpers.config import Config
 
 
-def log(message: str, type: str = "all", end: str = "\n") -> None:
+class Log:
     '''
-    Print messages based on user settings
+    Basic log system.
+    Prints messages based on user config.
     '''
 
-    if Config.logLevel == "all" and type in ("all", "warning_error", "warning", "error"):
-        print(message, end=end)
-        return
+    @staticmethod
+    def all(message: str, end: str = "\n") -> None:
+        '''
+        Display when logLevel == "all"
+        '''
 
-    if Config.logLevel == "warning_error" and type in ("warning_error", "warning", "error"):
-        print(message, end=end)
-        return
+        if Config.logLevel == "all":
+            print(message, end=end)
 
-    if Config.logLevel == "error" and type == "error":
-        print(message, end=end)
-        return
+    @staticmethod
+    def warn(message: str, end: str = "\n") -> None:
+        '''
+        Display when logLevel == "warning_error"
+        '''
+
+        if Config.logLevel == "warning_error":
+            print(message, end=end)
+
+    @staticmethod
+    def error(message: str, end: str = "\n") -> None:
+        '''
+        Display when logLevel == "error"
+        '''
+
+        if Config.logLevel == "error":
+            print(message, end=end)

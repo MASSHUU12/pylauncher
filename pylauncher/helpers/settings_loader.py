@@ -1,10 +1,10 @@
 import json
 from pathlib import Path
 
-from constants.messages import NO_CONFIG, NO_CONFIG_FILE, CONFIG_LOADING
+from constants.messages import NO_CONFIG, NO_CONFIG_FILE
 from constants.colors import Colors
 
-from helpers.log import log
+from helpers.log import Log
 from helpers.config import Config
 
 
@@ -22,13 +22,13 @@ def settings_loader() -> None:
             # Whole json file
             data = json.load(f)
     except FileNotFoundError:
-        log(NO_CONFIG_FILE, "warning_error")
+        Log.warn(NO_CONFIG_FILE)
         return
 
     try:
         # No settings provided
         if len(data["config"]) < 0:
-            log(NO_CONFIG, "warning_error")
+            Log.warn(NO_CONFIG)
             return
 
         # Loading and validating settings
@@ -37,9 +37,9 @@ def settings_loader() -> None:
                 if data["config"][config] in ("all", "warning_error", "error", "off"):
                     Config.logLevel = data["config"][config]
                 else:
-                    log(
-                        f"{Colors.FG.YELLOW}Value of {data['config'][config]} in {config} is invalid. Using the default value.{Colors.RESET}", "warning_error", end="\n\n")
+                    Log.warn(
+                        f"{Colors.FG.YELLOW}Value of {data['config'][config]} in {config} is invalid. Using the default value.{Colors.RESET}", "\n\n")
 
     except KeyError:
-        log(NO_CONFIG, "warning_error")
+        Log.warn(NO_CONFIG)
         return

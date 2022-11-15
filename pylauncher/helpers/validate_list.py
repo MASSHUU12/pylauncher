@@ -1,7 +1,7 @@
 from pathlib import Path
 
 from helpers.exit_with_err import exit_with_err as close
-from helpers.log import log
+from helpers.log import Log
 
 from constants.messages import (
     NO_FILE, NO_PATH, NO_PASSED_VALIDATION, ALL_PASSED, SOME_NOT_PASS)
@@ -22,12 +22,12 @@ def validate_list(list: dict[str, dict[str, dict[str, str | list[str]]]]) -> lis
             "options": []
         }
 
-        log(f"Validating {program} configuration:")
+        Log.all(f"Validating {program} configuration:")
 
         # Check if user defined path to the file,
         # if path doesn't exist continue with next program
         try:
-            log(f"Path: {list[program]['path']}")
+            Log.all(f"Path: {list[program]['path']}")
 
             # Check if file exists
             file = Path(str(list[program]["path"]))
@@ -36,10 +36,10 @@ def validate_list(list: dict[str, dict[str, dict[str, str | list[str]]]]) -> lis
                 details["path"] = list[program]["path"]
             else:
                 # If file does not exist continue with next program
-                log(NO_FILE, "error")
+                Log.error(NO_FILE)
                 continue
         except (KeyError, TypeError):
-            log(NO_PATH, "error")
+            Log.error(NO_PATH)
             continue
 
         # Check if user defined optional options for program startup
@@ -47,24 +47,24 @@ def validate_list(list: dict[str, dict[str, dict[str, str | list[str]]]]) -> lis
             if len(list[program]['options']) > 0:
                 details["options"] = list[program]["options"]
 
-            log(f"Options: {str(details['options'])}")
+            Log.all(f"Options: {str(details['options'])}")
         except KeyError:
-            log(f"Options: {str(details['options'])}")
+            Log.all(f"Options: {str(details['options'])}")
 
         # Append validated data
         validated.append(details)
 
-        log(f"{Colors.FG.GREEN}Success{Colors.RESET}\n")
+        Log.all(f"{Colors.FG.GREEN}Success{Colors.RESET}\n")
 
     if len(validated) <= 0:
         # If no item has passed validation terminate the program
         close(NO_PASSED_VALIDATION)
     elif len(validated) == len(list):
-        log(ALL_PASSED + "\n")
+        Log.all(ALL_PASSED + "\n")
     else:
-        log(SOME_NOT_PASS, "warning_error")
-        log(f"{Colors.FG.GREEN}Passed:{Colors.RESET} {len(validated)}",
-            "warning_error")
-        log(f"{Colors.FG.RED}Skipped:{Colors.RESET} {len(list) - len(validated)}\n", "warning_error")
+        Log.warn(SOME_NOT_PASS)
+        Log.warn(f"{Colors.FG.GREEN}Passed:{Colors.RESET} {len(validated)}")
+        Log.warn(
+            f"{Colors.FG.RED}Skipped:{Colors.RESET} {len(list) - len(validated)}\n")
 
     return validated

@@ -3,7 +3,7 @@ import subprocess
 from constants.colors import Colors
 from constants.messages import POSSIBLE_START_FAILURE
 
-from helpers.log import log
+from helpers.log import Log
 
 
 def run(list: list[dict[str, dict[str, dict[str, str | list[str]]]]]) -> None:
@@ -12,7 +12,7 @@ def run(list: list[dict[str, dict[str, dict[str, str | list[str]]]]]) -> None:
     '''
 
     for program in list:
-        log(
+        Log.all(
             f"Launching {Colors.BOLD}{program['program']}{Colors.RESET}", end="")
 
         try:
@@ -25,14 +25,14 @@ def run(list: list[dict[str, dict[str, dict[str, str | list[str]]]]]) -> None:
 
 
 def launch_success(program) -> None:
-    log(f"{Colors.FG.GREEN}{Colors.BOLD}")
-    log(
+    Log.all(f"{Colors.FG.GREEN}{Colors.BOLD}")
+    Log.all(
         f"{program['program']}{Colors.RESET} {Colors.FG.GREEN}should now be running.{Colors.RESET}")
-    log(f"{Colors.RESET}")
+    Log.all(f"{Colors.RESET}")
 
 
 def launch_failure(program) -> None:
-    log(f"{Colors.FG.RED}", "error")
-    log(
-        f"There was an error while starting {program['program']}, {POSSIBLE_START_FAILURE}", "error")
-    log(f"{Colors.RESET}", "error")
+    Log.error(f"{Colors.FG.RED}")
+    Log.error(
+        f"There was an error while starting {program['program']}, {POSSIBLE_START_FAILURE}")
+    Log.error(f"{Colors.RESET}")
