@@ -18,3 +18,5 @@ NO_LIST_FILE = f"{Colors.FG.RED}Err: The file list.json does not exist.\nCreate 
 NO_FILE = f"{Colors.FG.RED}Err: File in the defined path does not exist, program is skipped.\n{Colors.RESET}"
 NO_PATH = f"{Colors.FG.RED}Err: File path does not exist, program is skipped.\n{Colors.RESET}"
 NO_PASSED_VALIDATION = f"{Colors.FG.RED}Err: No item in the list passed validation. {CLOSING}"
+NO_ARGUMENTS = f"{Colors.FG.RED}Err: Not enough arguments have been submitted to the program. {CLOSING}"
+NO_CORRECT_ARGUMENTS = f"{Colors.FG.RED}Err: The passed command is not a known command. {CLOSING}"
