@@ -4,6 +4,7 @@ from constants.colors import Colors
 ALL_PASSED = f"{Colors.FG.GREEN}All elements have passed validation.{Colors.RESET}"
 CLOSING = f"Closing the program...{Colors.RESET}"
 CONFIG_LOADING = "Preparing to load config."
+PREPARING_FOR_CLOSING = "Preparing to close programs."
 
 # Warning
 SOME_NOT_PASS = f"{Colors.FG.YELLOW}Some elements did not pass validation.{Colors.RESET}"
@@ -18,3 +19,5 @@ NO_LIST_FILE = f"{Colors.FG.RED}Err: The file list.json does not exist.\nCreate 
 NO_FILE = f"{Colors.FG.RED}Err: File in the defined path does not exist, program is skipped.\n{Colors.RESET}"
 NO_PATH = f"{Colors.FG.RED}Err: File path does not exist, program is skipped.\n{Colors.RESET}"
 NO_PASSED_VALIDATION = f"{Colors.FG.RED}Err: No item in the list passed validation. {CLOSING}"
+NO_ARGUMENTS = f"{Colors.FG.RED}Err: Not enough arguments have been submitted to the program. {CLOSING}"
+NO_CORRECT_ARGUMENTS = f"{Colors.FG.RED}Err: The passed command is not a known command. {CLOSING}"
