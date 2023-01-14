@@ -10,9 +10,9 @@ from constants.info import info
 
 
 def main(argv: list[str]) -> None:
-    '''
+    """
     The main function of the program
-    '''
+    """
 
     info()
 

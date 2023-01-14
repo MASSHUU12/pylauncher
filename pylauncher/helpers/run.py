@@ -7,9 +7,9 @@ from helpers.log import Log
 
 
 def run(list: list[dict[str, dict[str, dict[str, str | list[str]]]]]) -> None:
-    '''
+    """
     Runs programs from list
-    '''
+    """
 
     for program in list:
         Log.all(

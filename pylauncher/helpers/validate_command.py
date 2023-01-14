@@ -5,9 +5,9 @@ from constants.constants import COMMAND_OPEN, COMMAND_CLOSE
 
 
 def validate_command(command: str) -> None:
-    '''
+    """
     Check if user passed correct command
-    '''
+    """
 
     low = command.lower()
     if low not in (*COMMAND_OPEN, *COMMAND_CLOSE):

@@ -9,9 +9,9 @@ from helpers.config import Config
 
 
 def settings_loader() -> None:
-    '''
+    """
     Load settings from file
-    '''
+    """
 
     # Path to the file with settings
     path = Path(__file__).parent / "../config/config.json"
@@ -38,7 +38,8 @@ def settings_loader() -> None:
                     Config.logLevel = data["config"][config]
                 else:
                     Log.warn(
-                        f"{Colors.FG.YELLOW}Value of {data['config'][config]} in {config} is invalid. Using the default value.{Colors.RESET}", "\n\n")
+                        f"{Colors.FG.YELLOW}Value of {data['config'][config]} in {config} is invalid.")
+                    Log.warn(f"Using the default value.{Colors.RESET}", "\n\n")
 
     except KeyError:
         Log.warn(NO_CONFIG)

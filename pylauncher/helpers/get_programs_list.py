@@ -7,9 +7,9 @@ from constants.colors import Colors
 
 
 def get_programs_list(list_program: str) -> dict[str, dict[str, dict[str, str | list[str]]]]:
-    '''
+    """
     Returns information about programs to run from a list configured by the user
-    '''
+    """
 
     # Path to the file with lists
     path = Path(__file__).parent / "../lists/list.json"

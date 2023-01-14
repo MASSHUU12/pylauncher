@@ -1,7 +1,7 @@
 class Colors:
-    '''
+    """
     Class for printing colored text
-    '''
+    """
 
     RESET = '\033[0m'
     BOLD = '\033[01m'
@@ -12,9 +12,9 @@ class Colors:
     INVISIBLE = '\033[08m'
 
     class FG:
-        '''
+        """
         Set foreground color
-        '''
+        """
 
         BLACK = '\033[30m'
         RED = '\033[31m'
@@ -33,9 +33,9 @@ class Colors:
         DARKGREY = '\033[90m'
 
     class BG:
-        '''
+        """
         Set background color
-        '''
+        """
 
         BLACK = '\033[40m'
         RED = '\033[41m'

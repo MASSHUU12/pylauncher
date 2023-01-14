@@ -8,10 +8,11 @@ from constants.messages import (
 from constants.colors import Colors
 
 
-def validate_list(list: dict[str, dict[str, dict[str, str | list[str]]]]) -> list[dict[str, dict[str, dict[str, str | list[str]]]]]:
-    '''
+def validate_list(list: dict[str, dict[str, dict[str, str | list[str]]]]) -> list[
+        dict[str, dict[str, dict[str, str | list[str]]]]]:
+    """
     Reads the list of user-defined programs and validate it
-    '''
+    """
 
     validated = []
 

@@ -6,26 +6,28 @@ from constants.messages import PREPARING_FOR_CLOSING
 
 
 def close(list: dict[str, dict[str, dict[str, str | list[str]]]]) -> None:
-    '''
+    """
     Closes programs from list
-    '''
+    """
 
     Log.all(PREPARING_FOR_CLOSING)
 
     for program in list:
-
         try:
             # Get program path
             p = str(list[program]["path"])
 
             # Remove path and get program name
-            programName = p.split("\\")[-1]
+            program_name = p.split("\\")[-1]
 
             # Remove extension from name
-            cleanName = programName.rsplit(".", 1)[0]
+            clean_name = program_name.rsplit(".", 1)[0]
 
             try:
-                for process in (process for process in psutil.process_iter() if process.name().startswith(cleanName)):
+                def x(): return (process for process in psutil.process_iter()
+                                 if process.name().startswith(clean_name))
+
+                for process in x():
                     Log.all(f"{Colors.FG.GREEN}", "")
                     Log.all(
                         f"Terminating {Colors.BOLD}{program}{Colors.RESET} {Colors.FG.GREEN}(pid={process.pid}).", "")
