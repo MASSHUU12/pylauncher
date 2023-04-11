@@ -1,10 +1,10 @@
 # PyLauncher
 
+> Note: Project archived due to the fact that I created a [better version](https://github.com/MASSHUU12/program-runner) of this program using .NET.
+
 A program used to automate the startup of a series of programs.
 
 I run the same programs every day, and I don't want them to slow down the system startup by automatically running, so I created this program to streamline and speed up the constant clicking of the same icons.
-
-This source code is available to everyone under the standard [MIT](https://github.com/MASSHUU12/pylauncher/blob/master/LICENSE) license.
 
 # Prerequisites
 
